@@ -122,7 +122,7 @@ The closed-loop system uses unity negative feedback. The error signal $e(t) = r(
 
 The dynamics of incompressible flow in a pipeline are governed by the fluid momentum equation, analogous to Newton's second law applied to a column of fluid:
 
-$$I_h \frac{dQ}{dt} = \Delta P_\text{pump}(t) - \Delta P_\text{pipe}(t) - \Delta P_\text{valve}(t) \tag{1}$$
+$$I_h \frac{dQ}{dt} = \Delta P_\text{pump}(t) - \Delta P_\text{pipe}(t) - \Delta P_\text{valve}(t)$$
 
 where $I_h = \rho L / A$ is the **hydraulic inductance** [kg/m⁴], representing the inertia of the fluid mass in the pipeline.
 
@@ -130,7 +130,7 @@ where $I_h = \rho L / A$ is the **hydraulic inductance** [kg/m⁴], representing
 
 For laminar flow, the pressure drop due to viscous friction is:
 
-$$\Delta P_\text{pipe} = R_p \cdot Q(t), \qquad R_p = \frac{128\,\mu\,L}{\pi D^4} \tag{2}$$
+$$\Delta P_\text{pipe} = R_p \cdot Q(t), \qquad R_p = \frac{128\,\mu\,L}{\pi D^4}$$
 
 where $\mu$ is the dynamic viscosity [Pa·s].
 
@@ -146,7 +146,7 @@ The total pipeline resistance is $R_\text{tot} = R_p + R_v$.
 
 A centrifugal pump driven by a VFD motor is well-approximated by a first-order lag:
 
-$$\tau_p \frac{dP_p}{dt} + P_p = K_\text{pump}\, u(t) \tag{3}$$
+$$\tau_p \frac{dP_p}{dt} + P_p = K_\text{pump}\, u(t)$$
 
 where $\tau_p = 2.0$ s is the mechanical time constant and $K_\text{pump} = 50000$ Pa is the pump pressure gain at rated speed.
 
@@ -179,7 +179,7 @@ $$\dot{Q}   = \frac{1}{I_h}\,P_p - \frac{R_\text{tot}}{I_h}\,Q(t) + \frac{d(t)}{
 
 For controller design, the normalised second-order model is used, obtained by expressing all quantities in per-unit relative to the nominal operating condition ($Q_0 = 0.05$ m³/s):
 
-$$\boxed{G(s) = \frac{1}{(T_1 s + 1)(T_2 s + 1)} = \frac{1}{(2s+1)(7.05s+1)}} \tag{4}$$
+$$\boxed{G(s) = \frac{1}{(T_1 s + 1)(T_2 s + 1)} = \frac{1}{(2s+1)(7.05s+1)}}$$
 
 where $T_1 = \tau_p = 2.0$ s (pump lag) and $T_2 = I_h/R_\text{tot} = 7.05$ s (pipeline hydraulic lag). The plant poles are:
 
