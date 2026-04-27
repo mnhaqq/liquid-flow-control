@@ -342,19 +342,21 @@ Design: $K = 10.0$; lead section $z_1=0.15, p_1=0.75$; lag section $z_2=0.08, p_
 
 ### 6.1 State-Space Model
 
-With states $\mathbf{x} = [P_p,\; Q]^\top$, the continuous-time state-space model is:
+With states $\mathbf{x} = [P_p,\ Q]^\top$, the continuous-time state-space model is:
 
 $$\dot{\mathbf{x}} = \mathbf{A}\mathbf{x} + \mathbf{B}u, \qquad y = \mathbf{C}\mathbf{x}$$
 
-$$\mathbf{A} = \begin{bmatrix} -0.5 & 0 \\ 1.0 & -0.1418 \end{bmatrix}, \quad \mathbf{B} = \begin{bmatrix} 0.5 \\ 0 \end{bmatrix}, \quad \mathbf{C} = \begin{bmatrix} 0 & 1 \end{bmatrix}$$
+$$\mathbf{A} = \left[\begin{array}{cc} -0.5 & 0 \\ 1.0 & -0.1418 \end{array}\right], \quad
+\mathbf{B} = \left[\begin{array}{c} 0.5 \\ 0 \end{array}\right], \quad
+\mathbf{C} = \left[\begin{array}{cc} 0 & 1 \end{array}\right]$$
 
 ### 6.2 Controllability and Observability
 
 The controllability matrix $\mathcal{M}_c = [\mathbf{B}\ \ \mathbf{AB}]$ and observability matrix $\mathcal{M}_o = [\mathbf{C}^\top\ \ (\mathbf{CA})^\top]^\top$ satisfy:
 
-$$\operatorname{rank}(\mathcal{M}_c) = 2 \quad \Rightarrow \quad \textbf{Fully Controllable}$$
+$$\text{rank}(\mathcal{M}_c) = 2 \quad \Rightarrow \quad \textbf{Fully Controllable}$$
 
-$$\operatorname{rank}(\mathcal{M}_o) = 2 \quad \Rightarrow \quad \textbf{Fully Observable}$$
+$$\text{rank}(\mathcal{M}_o) = 2 \quad \Rightarrow \quad \textbf{Fully Observable}$$
 
 ```matlab
 Mc = ctrb(A, B);    rank_c = rank(Mc);   % = 2
